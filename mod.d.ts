@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float32ndarray, boolndarray } from '@stdlib/types/ndarray';
 
 /**
-* Cumulatively test whether every element in a one-dimensional single-precision floating-point ndarray is truthy.
+* Cumulatively tests whether every element in a one-dimensional single-precision floating-point ndarray is truthy.
 *
-* @module @stdlib/blas-ext-base-ndarray-scuevery
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float32Vector = require( '@stdlib/ndarray-vector-float32' );
 * var BooleanVector = require( '@stdlib/ndarray-vector-bool' );
-* var scuevery = require( '@stdlib/blas-ext-base-ndarray-scuevery' );
 *
 * var x = new Float32Vector( [ 1.0, 1.0, 0.0, 1.0 ] );
 * var out = new BooleanVector( 4 );
@@ -37,12 +48,9 @@
 * var bool = ( z === out );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function scuevery( arrays: [ float32ndarray, boolndarray ] ): boolndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = scuevery;
